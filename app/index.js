@@ -4,7 +4,7 @@ const version = process.env.APP_VERSION || 'v0.0.0';
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, {'Content-Type':'text/plain'});
-  res.end(`Hello from POC app - ${version}\n`);
+  res.end(`Hello from POC test app - ${version}\n`);
 });
 
 server.listen(port, () => {
