@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: sonu96/poc-app
-tag: d578e1b
+tag: e4c9d79
   pullPolicy: IfNotPresent
 
 service:
