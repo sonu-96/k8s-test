@@ -1,0 +1,14 @@
+replicaCount: 1
+
+image:
+  repository: sonu96/poc-app
+  pullPolicy: IfNotPresent
+  tag: "v0.0.0" # Jenkins will update this
+
+service:
+  type: ClusterIP
+  port: 3000
+
+env:
+  APP_VERSION: "v0.0.0"
+
