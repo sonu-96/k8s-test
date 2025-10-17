@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: sonu96/poc-app
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 3000
+  nodePort: 30080
+
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
+env:        # Extra env entries for container
+  - name: PORT
+    value: "3000"
+  - name: APP_VERSION
+    value: "v0.0.0"
+

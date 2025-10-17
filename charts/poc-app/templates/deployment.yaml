@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "poc-app.fullname" . }}
+  labels:
+    app: {{ include "poc-app.name" . }}
+    chart: {{ include "poc-app.chart" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "poc-app.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "poc-app.name" . }}
+    spec:
+      containers:
+      - name: poc-app
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        env:
+{{ toYaml .Values.env | indent 10 }}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+
