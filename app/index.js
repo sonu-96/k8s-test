@@ -4,7 +4,7 @@ const version = process.env.APP_VERSION || 'v0.0.0';
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, {'Content-Type':'text/plain'});
-  res.end(`Hello! from Kubernetes Pod POC successfully work - ${version}\n`);
+  res.end(`Hello! from Kubernetes Pod POC successfully work for testing - ${version}\n`);
 });
 
 server.listen(port, () => {
